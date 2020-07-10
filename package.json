@@ -1,7 +1,7 @@
 {
   "name": "@rdlabo/support-ionic-appflow-monorepo",
   "description": "Script for support ionic appflow monorepo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Masahiko Sakakibara<sakakibara@rdlabo.jp>",
   "bin": {
     "support-ionic-appflow-monorepo": "./bin/run"
