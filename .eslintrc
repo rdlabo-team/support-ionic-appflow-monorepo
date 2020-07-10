@@ -2,5 +2,9 @@
   "extends": [
     "oclif",
     "oclif-typescript"
-  ]
+  ],
+  "rules": {
+    "no-prototype-builtins" : 0,
+    "@typescript-eslint/ban-ts-ignore": 0
+  }
 }
