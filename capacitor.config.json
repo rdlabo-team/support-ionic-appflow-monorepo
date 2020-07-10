@@ -1,0 +1,20 @@
+{
+  "appId": "jp.rdlabo.tipsys",
+  "appName": "tipsys",
+  "bundledWebRuntime": false,
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": true
+  },
+  "plugins": {
+    "Keyboard": {
+      "resize": "ionic"
+    },
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  }
+}

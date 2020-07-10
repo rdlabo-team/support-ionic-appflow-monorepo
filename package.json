@@ -1,40 +1,24 @@
 {
   "name": "@rdlabo/support-ionic-appflow-monorepo",
-  "version": "0.0.4",
-  "description": "script for support ionic appflow monorepo",
-  "main": "dist/esm/index.js",
-  "engines": {
-    "node": ">=12.0.0"
+  "description": "Script for support ionic appflow monorepo",
+  "version": "0.0.5",
+  "author": "Masahiko Sakakibara<sakakibara@rdlabo.jp>",
+  "bin": {
+    "support-ionic-appflow-monorepo": "./bin/run"
   },
-  "type": "module",
   "scripts": {
-    "build": "npm run clean && tsc",
-    "clean": "rimraf ./dist",
-    "watch": "tsc --watch",
-    "prepublishOnly": "npm run build",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
     "npm-publish": "np"
   },
-  "bin": {
-    "support-ionic-appflow-monorepo": "dist/esm/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rdlabo-team/support-ionic-appflow-monorepo.git"
-  },
-  "keywords": [
-    "ionic",
-    "appflow",
-    "monorepo",
-    "rdlabo"
-  ],
-  "author": "Masahiko Sakakibara <sakakibara@rdlabo.jp>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo/issues"
-  },
-  "homepage": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo#readme",
+  "bugs": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo/issues",
   "dependencies": {
-    "yargs": "^15.4.0"
+    "@oclif/command": "^1.7.0",
+    "@oclif/config": "^1.16.0",
+    "@oclif/plugin-help": "^2.2.3",
+    "chalk": "^4.1.0",
+    "cli-ux": "^5.4.9",
+    "tslib": "^1.13.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
@@ -43,11 +27,35 @@
     "prettier-plugin-java": "^0.8.0",
     "pretty-quick": "^2.0.1",
     "rimraf": "^3.0.0",
-    "typescript": "^3.2.4"
+    "@oclif/dev-cli": "^1.22.2",
+    "@types/node": "^10.17.26",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "support-ionic-appflow-monorepo"
+  },
+  "repository": "rdlabo-team/support-ionic-appflow-monorepo",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  }
+  },
+  "types": "lib/index.d.ts"
 }
