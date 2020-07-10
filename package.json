@@ -1,0 +1,49 @@
+{
+  "name": "@rdlabo/support-ionic-appflow-monorepo",
+  "version": "0.0.1",
+  "description": "script for support ionic appflow monorepo",
+  "main": "dist/esm/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "npm-publish": "np"
+  },
+  "bin": {
+    "support-ionic-appflow-monorepo": "dist/esm/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdlabo-team/support-ionic-appflow-monorepo.git"
+  },
+  "keywords": [
+    "ionic",
+    "appflow",
+    "monorepo",
+    "rdlabo"
+  ],
+  "author": "Masahiko Sakakibara <sakakibara@rdlabo.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo/issues"
+  },
+  "homepage": "https://github.com/rdlabo-team/support-ionic-appflow-monorepo#readme",
+  "dependencies": {
+    "yargs": "^15.4.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "np": "^6.2.4",
+    "prettier": "^2.0.5",
+    "prettier-plugin-java": "^0.8.0",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
