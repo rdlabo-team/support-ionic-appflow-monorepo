@@ -35,7 +35,7 @@ Copy `capacitor.config.json` file from {APP_DIR} to project directory. Ionic App
 
 You can use this command:
 ```sh-session
-% cp -r -f {APP_DIR}/ionic.config.json {APP_DIR}/capacitor.config.json ./
+% cp -r -f {APP_DIR}/capacitor.config.json ./
 ```
 
 ## 2. Set npm script

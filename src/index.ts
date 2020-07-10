@@ -31,7 +31,7 @@ class SupportIonicAppFlowMonorepo extends Command {
   }
 
   getRequirePackageFromDependencies(path: string): string[] {
-    const installPackage: string[] = ['@capacitor/core', '@capacitor/cli'];
+    const installPackage: string[] = ['@capacitor/core', '@capacitor/cli']
 
     const {dependencies} = getObjectFromJsonFile(process.cwd() + `/${path}/package.json`)
     const appDependencies = Object.keys(dependencies)
