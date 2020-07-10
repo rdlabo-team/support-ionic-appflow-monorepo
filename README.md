@@ -29,9 +29,8 @@ This script work three step.
 You can freely name the app directory. In this usage, app directory name display {APP_DIR}. Please replace name at your environment.
 
 ## 1. Copy file
-Copy two file from {APP_DIR} to project directory. Ionic AppFlow checked these file before npm build. So you should copy manually.
+Copy `capacitor.config.json` file from {APP_DIR} to project directory. Ionic AppFlow checked these file before npm build. So you should copy manually.
 
-- `{APP_DIR}/ionic.config.json`     => `./ionic.config.json`
 - `{APP_DIR}/capacitor.config.json` => `./capacitor.config.json`
 
 You can use this command:
