@@ -32,7 +32,7 @@ class SupportIonicAppFlowMonorepo extends Command {
   }
 
   getRequirePackageFromInfo(): string[] {
-    const installPackage: string[] = []
+    const installPackage: string[] = ['@capacitor/core']
 
     const {type} = getObjectFromJsonFile(process.cwd() + '/ionic.config.json')
     const replacePackage = {
