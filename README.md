@@ -15,13 +15,13 @@ So this script will solve your problem, if your repository looks like this:
 ```
 project
  ├── package.json
- ├── api/  -- framework like NestJS
- └── {APP_DIR}/  -- capacitor apps
+ ├── api/          -- framework like NestJS
+ └── {APP_DIR}/    -- capacitor apps
 ```
 
 This script work three step.
 
-1. Check require packages from Ionic CLI and {APP_DIR} package.json
+1. Check require packages from {APP_DIR} package.json.
 2. Install require packages to project directory.
 3. Copy file for using Ionic AppFlow from {APP_DIR}.
 
