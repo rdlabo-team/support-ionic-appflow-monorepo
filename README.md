@@ -10,26 +10,27 @@ This script for support monorepo structure at Ionic AppFlow
 
 
 Ionic AppFlow don't support monorepo structure now.
-So if your repository is this, you can use this script.
+So this script will solve your problem, if your repository looks like this:
 
 ```
 project
  ├── package.json
- ├── api_dir/  -- framework like NestJS
- └── app_dir/  -- capacitor apps
+ ├── api/  -- framework like NestJS
+ └── {APP_DIR}/  -- capacitor apps
 ```
 
 This script work three step.
 
-1. Check require package from Ionic CLI and app_dir's package.json
-2.   and install project directory.
-3. Copy file using Ionic AppFlow from app_dir.
+1. Check require packages from Ionic CLI and {APP_DIR} package.json
+2. Install require packages to project directory.
+3. Copy file for using Ionic AppFlow from {APP_DIR}.
 
 # Usage
-You can use free app directory name. In usage, app directory name display {APP_DIR}. Please replace at your environment.
+You can freely name the app directory. In this usage, app directory name display {APP_DIR}. Please replace name at your environment.
 
 ## 1. Copy file
-Copy two file from {APP_DIR} to project directory.
+Copy two file from {APP_DIR} to project directory. Ionic AppFlow checked these file before npm build. So you should copy manually.
+
 - `{APP_DIR}/ionic.config.json`     => `./ionic.config.json`
 - `{APP_DIR}/capacitor.config.json` => `./capacitor.config.json`
 
@@ -38,18 +39,11 @@ You can use this command:
 % cp -r -f {APP_DIR}/ionic.config.json {APP_DIR}/capacitor.config.json ./
 ```
 
-## 2. Install this script at project directory
+## 2. Set npm script
 
-```sh-session
-% npm install @rdlabo/support-ionic-appflow-monorepo --save-dev
-```
-
-## 3. Set npm script
-
-```
+```diff
   "scripts": {
     ...
-    "build": "npm ci && npx lerna bootstrap && npm run build:ionic",
-    "postbuild": "support-ionic-appflow-monorepo --path={APP_DIR}"
++   "postbuild": "npx @rdlabo/support-ionic-appflow-monorepo --path={APP_DIR}"
   },
 ```
